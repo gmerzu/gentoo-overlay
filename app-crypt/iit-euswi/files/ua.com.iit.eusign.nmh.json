@@ -1,0 +1,8 @@
+{
+	"name": "ua.com.iit.eusign.nmh",
+	"description": "ІІТ Користувач ЦСК-1. Локальний процес підпису",
+	"allowed_origins": ["chrome-extension://jffafkigfgmjafhpkoibhfefeaebmccg/"],
+	"allowed_extensions": ["eusw@iit.com.ua"],
+	"path": "/opt/iit/eu/sw/euscpnmh",
+	"type": "stdio"
+}
