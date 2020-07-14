@@ -1,0 +1,15 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 90feea4..96ce8e1 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -181,6 +181,10 @@ install(DIRECTORY ${CLANG_RESOURCE_DIR}/include
+   DESTINATION "${CastXML_INSTALL_DATA_DIR}/clang"
+   )
+ 
++if(LLVM_VERSION_MAJOR GREATER 9)
++  set(CLANG_LINK_CLANG_DYLIB TRUE)
++endif()
++
+ add_subdirectory(src)
+ 
+ if(BUILD_TESTING)
