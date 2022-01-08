@@ -1,0 +1,18 @@
+[Unit]
+Description=TorrServer
+After=syslog.target network.target nss-lookup.target
+ConditionUser=!root
+
+[Service]
+Type=simple
+Environment="GODEBUG=madvdontneed=1"
+ExecStartPre=-/bin/mkdir -p %h/.local/share/TorrServer
+ExecStart=/usr/bin/TorrServer -d %h/.local/share/TorrServer
+ExecReload=/bin/kill -HUP ${MAINPID}
+ExecStop=/bin/kill -INT ${MAINPID}
+TimeoutSec=30
+Restart=on-failure
+LimitNOFILE=4096
+
+[Install]
+WantedBy=default.target
