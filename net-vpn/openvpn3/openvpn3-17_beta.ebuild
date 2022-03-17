@@ -10,9 +10,8 @@ HOMEPAGE="https://openvpn.net"
 LICENSE="GNU Affero General Public License v3.0"
 
 EGIT_REPO_URI="https://github.com/OpenVPN/openvpn3-linux.git"
-EGIT_COMMIT="v16_beta"
+EGIT_COMMIT="v17_beta"
 EGIT_SUBMODULES=( '*' )
-
 
 SLOT="0"
 
@@ -36,7 +35,6 @@ RDEPEND="${CDEPEND}
 "
 DEPEND="${RDEPEND}"
 BDEPEND="virtual/pkgconfig"
-
 
 src_configure() {
 	cat <<EOF >./version.m4
